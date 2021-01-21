@@ -1,26 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=h1, initial-scale=1.0">
-    <title>article list</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
-    
-</head>
-<body>
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
     <h1>Article list</h1>
     <div class="article">
         {% for article in articles %}
             <h2> 
-                <a href=""> {{ article.title }}</a>
+                <a href="{% url 'articles:detail' slug=article.slug %}"> {{ article.title }}</a>
             </h2>
             <div>{{ article.snippet }}</div>
             <div>{{ article.date }}</div>
 
-        {% endfor%}
-
-
+        {% endfor %}
     </div>
-</body>
-</html>
+
+{% endblock %}

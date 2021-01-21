@@ -7,7 +7,7 @@ class Article(models.Model):
     slug = models.SlugField()
     body = models.TextField()
     date = models.DateTimeField(auto_now_add = True)
-    #thumbnail later
+    thumb = models.ImageField(default='default.png', blank=True)
     #author later
     def __str__(self):# must be define in the class, indenting is important
         return self.title

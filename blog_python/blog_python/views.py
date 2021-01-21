@@ -1,6 +1,8 @@
 from django.conf.urls import include, url
 from django.http import HttpResponse
 from django.shortcuts import render
+
+
 def homepage(request):
     #return HttpResponse('home')
     return render(request,'homepage.html')
